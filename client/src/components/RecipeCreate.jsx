@@ -169,7 +169,7 @@ export default function RecipeCreate() {
         {error !== 'No es un texto' ? null : (
           <span className={S.span}>Debe Ingresar un resumen de la receta.</span>
         )}
-        <label>Healthy Level:{input.Healthy_food_level}</label>
+        <label>Healthy Level: {input.Healthy_food_level}</label>
         <input
           type="range"
           min="1"

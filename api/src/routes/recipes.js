@@ -8,7 +8,7 @@ const { YOUR_APY_KEY, URLFOOD } = process.env;
 const infoapi = async () => {
   try {
     const url = await axios.get(
-      'https://api.spoonacular.com/recipes/complexSearch?apiKey=8cb1910af67d42e9a53689c91fb47224&addRecipeInformation=true&number=100'
+      'https://api.spoonacular.com/recipes/complexSearch?apiKey=20a447265cfa487da1728bf0666ff76b&addRecipeInformation=true&number=100'
       // `${URLFOOD}/recipes/complexSearch?apiKey=${YOUR_APY_KEY}&addRecipeInformation=true&number=100`
     );
     // YOUR_APY_KEY00=8cb1910af67d42e9a53689c91fb47224

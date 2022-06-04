@@ -1,5 +1,5 @@
 body {
-  background-image: url('https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-image: url('https://images.pexels.com/photos/313700/pexels-photo-313700.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,11 +16,17 @@ body {
   margin: auto;
   height: 30px;
   margin-top: 10px;
-  background-color: black;
+  background-color: rgb(57, 57, 57);
   color: white;
   font-size: 15px;
   font-weight: 700;
   border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.home .volverACargar:hover {
+  transform: scale(0.9);
+  transition: all 0.3s ease;
 }
 
 .home .total1 {

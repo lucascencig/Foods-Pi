@@ -154,6 +154,9 @@ export const reducerroot = (state = initialState, action) => {
                   return recipe;
               }
               console.log(recipe);
+              // if ((action.payload === 'vegetarian') && (recipe.hasOwnProperty('vegetarian')) && (recipe.vegetarian === true)) return recipe
+
+              // if ((action.payload === 'dairyFree') && (recipe.hasOwnProperty('dairyFree')) && (recipe.dairyFree === true)) return recipe
             });
 
       const filter2 =
@@ -165,9 +168,16 @@ export const reducerroot = (state = initialState, action) => {
                 if (recipe.diets.find(element => element === action.payload))
                   return recipe;
               }
-              console.log(recipe);
-            });
 
+              console.log(recipe);
+              // if ((action.payload === 'vegetarian') && (recipe.hasOwnProperty('vegetarian')) && (recipe.vegetarian === true)) return recipe
+
+              // if ((action.payload === 'dairyFree') && (recipe.hasOwnProperty('dairyFree')) && (recipe.dairyFree === true)) return recipe
+            });
+      return {
+        ...state,
+        recipes: filtByDiets.length === filter2.length ? filtByDiets : filter2,
+      };
       return {
         ...state,
         recipesAll:

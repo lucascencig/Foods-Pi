@@ -52,7 +52,7 @@ export default function Paginadofn({
         </button>
         <button
           className={S.botonesCostados}
-          onClick={() => paginado('previus')}
+          onClick={() => paginado('previous')}
         >
           Anterior
         </button>

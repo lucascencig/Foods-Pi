@@ -69,6 +69,8 @@ export default function Home() {
     }, 2000);
   }
   if (searchClick === false) {
+    const currentFoods = recipes.slice(indexFoodsFirst, indexFoodsLast);
+
     return (
       <div className={S.hidden}>
         <div className={S.imagen1}> </div>

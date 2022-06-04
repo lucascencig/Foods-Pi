@@ -1,0 +1,89 @@
+.contenedorForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.contenedorForm button {
+  width: 100px;
+  height: 30px;
+  background-color: grey;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.contenedorForm button:hover {
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex-direction: column;
+  width: 50%;
+  border: transparent;
+  background-color: rgba(128, 128, 128, 0.415);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.form label {
+  color: rgb(67, 67, 67);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.form input {
+  width: 20%;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.form input :in-range {
+  color: black;
+}
+.form span {
+  color: rgb(121, 5, 5);
+}
+.form select {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 20%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  flex-wrap: wrap;
+  flex-direction: row;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(3, 3, 3);
+  margin-top: 20px;
+  margin-bottom: 50px;
+  width: 50%;
+  padding-bottom: 10px;
+  background-color: rgba(128, 128, 128, 0.173);
+}
+.contenedor p {
+  margin-left: 20px;
+}
+
+.contenedor button {
+  background-color: red;
+  font-weight: 700;
+}
