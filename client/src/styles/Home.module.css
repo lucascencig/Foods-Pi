@@ -1,0 +1,34 @@
+body {
+  background-image: url('https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+}
+.home .volverACargar {
+  width: 100px;
+  margin: auto;
+  height: 30px;
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.home .total1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: auto;
+  padding-top: 20px;
+  width: 80%;
+}

@@ -1,0 +1,10 @@
+.contenedor .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.contenedor button {
+  margin-top: 10px;
+}

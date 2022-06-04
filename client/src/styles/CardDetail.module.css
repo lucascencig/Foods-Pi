@@ -1,0 +1,87 @@
+.contenedorGeneral {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.contenedorGeneral .titulo {
+  font-size: 30px;
+  color: black;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.contenedorGeneral .image {
+  width: 600px;
+  height: 400px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: solid 2px black;
+}
+.contenedorGeneral .boton {
+  width: 100px;
+
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contenedorGeneral .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.text h2 {
+  font-size: 18px;
+  color: rgb(98, 98, 98);
+  width: 50%;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.187);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.text h3 {
+  font-size: 18px;
+  color: rgb(98, 98, 98);
+  width: 60%;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.187);
+  border-radius: 10px 10px 0 0;
+  padding: 20px;
+  text-align: justify;
+}
+.summary {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 60%;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: rgba(0, 0, 0, 0.119);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.summary h4 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 60%;
+  margin: auto;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: rgba(0, 0, 0, 0.119);
+  padding: 20px;
+}

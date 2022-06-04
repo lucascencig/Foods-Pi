@@ -23,7 +23,7 @@ export default function SearchBar({ search }) {
   }
 
   return (
-    <div>
+    <div className={S.contenedor}>
       <input
         className={S.search}
         type="text"

@@ -1,0 +1,36 @@
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.filterContenedor {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.filterContenedor select {
+  margin-right: 20px;
+  width: 180px;
+  height: 25px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.filterContenedor option {
+  background-color: rgba(127, 255, 212, 0.27);
+  font-size: 15px;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+
+.nav .add {
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+}

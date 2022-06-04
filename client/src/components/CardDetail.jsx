@@ -21,20 +21,19 @@ export default function Detail(props) {
 
   return (
     <div className={S.contenedorGeneral}>
+      <Link to="/home">
+        <button className={S.boton}>Atras</button>
+      </Link>
       {
         <div>
           <h1 className={S.titulo}>{myFood.name}</h1>
           <img className={S.image} src={myFood.image} alt="img not found" />
 
-          <Link to="/home">
-            <button className={S.boton}>Atras</button>
-          </Link>
-
           <div className={S.text}>
-            <h3>
+            <h2>
               Type Diets: <p>{diet?.join('; ')}</p>
-            </h3>
-            <div>
+            </h2>
+            <div className={S.summary}>
               Summary:{' '}
               <p
                 dangerouslySetInnerHTML={{
@@ -44,12 +43,12 @@ export default function Detail(props) {
               <h3>
                 Steps: <p>{myFood.steps ? myFood.steps : sinSteps}</p>
               </h3>
-              <h3>
+              <h4>
                 Dish Type:{' '}
                 {myFood.types ? myFood.types : 'Not contains types food'}
-              </h3>
-              <h3>Score: {myFood.score}</h3>
-              <h3>Healthy food: {myFood.healthScore}</h3>
+              </h4>
+              <h4>Score: {myFood.score}</h4>
+              <h4>Healthy food: {myFood.healthScore}</h4>
             </div>
           </div>
         </div>

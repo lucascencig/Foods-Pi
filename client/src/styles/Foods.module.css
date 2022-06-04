@@ -1,0 +1,9 @@
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: aqua;
+}

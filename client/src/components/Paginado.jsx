@@ -47,8 +47,15 @@ export default function Paginadofn({
   return (
     <nav>
       <ul className={S.paginado}>
-        <button onClick={() => paginado('start')}>Inicio</button>
-        <button onClick={() => paginado('previus')}>Anterior</button>
+        <button className={S.botonesCostados} onClick={() => paginado('start')}>
+          Inicio
+        </button>
+        <button
+          className={S.botonesCostados}
+          onClick={() => paginado('previus')}
+        >
+          Anterior
+        </button>
         {pageNumbers &&
           pageNumbers.map(n => (
             <li key={n}>
@@ -57,8 +64,15 @@ export default function Paginadofn({
               </button>
             </li>
           ))}
-        <button onClick={() => paginado('next')}>Siguiente</button>
-        <button onClick={() => paginado('finish')}>Final</button>
+        <button className={S.botonesCostados} onClick={() => paginado('next')}>
+          Siguiente
+        </button>
+        <button
+          className={S.botonesCostados}
+          onClick={() => paginado('finish')}
+        >
+          Final
+        </button>
       </ul>
     </nav>
   );
