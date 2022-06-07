@@ -5,8 +5,6 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import S from '../styles/CardDetail.module.css';
 
-import { deleteState } from '../actions/actions';
-
 export default function Detail(props) {
   const dispatch = useDispatch();
 

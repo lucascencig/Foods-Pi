@@ -173,9 +173,8 @@ export default function RecipeCreate() {
           onChange={validarInputDish}
           value={input.dish_summary}
           name="dish_summary"
-        >
-          Escribe tu resumen de la receta...
-        </textarea>
+          placeholder=" Escribe tu resumen de la receta..."
+        ></textarea>
         <div className={S.error}>
           <p>
             {error !== 'No es un Texto' ? null : (
@@ -208,17 +207,18 @@ export default function RecipeCreate() {
         {error !== 'Los datos no son Numero1' ? null : (
           <span className={S.span}>Ingresa un numero del 1 al 100</span>
         )}
-        <label>Step by Step:</label>
-        <h4>Ingresa el paso a paso de tu receta...</h4>
+        <label>Step by Step: </label>
+
         <input
+          className={S.pasoapaso}
           name="Step_by_step"
           value={input.step_by_Step}
           type="text"
           onChange={validarInputStep}
           cols="50"
           rows="5"
+          placeholder="Ingresa el paso a paso de tu receta..."
         />
-
         <div className={S.error}>
           <p>
             {error !== 'No es un paso a paso' ? null : (

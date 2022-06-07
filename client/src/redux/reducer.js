@@ -30,7 +30,6 @@ const initialState = {
   recipesAll: [],
   types: [],
   detail: [],
-  dish: [],
 };
 
 export const reducerroot = (state = initialState, action) => {

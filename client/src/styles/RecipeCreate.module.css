@@ -31,6 +31,7 @@
   border: transparent;
   background-color: rgba(128, 128, 128, 0.415);
   border-radius: 10px;
+  backdrop-filter: blur(7px);
   padding: 10px;
 }
 
@@ -47,12 +48,28 @@
   width: 20%;
   border-radius: 5px;
   margin-top: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
 }
+
 .form input :in-range {
   color: black;
 }
-.form span {
-  color: rgb(121, 5, 5);
+
+.form textarea {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+.form p {
+  color: rgb(225, 11, 11);
+  font-size: 20px;
+  font-weight: 700;
+  padding: 1px;
+  text-align: center;
+  background-color: transparent;
+  backdrop-filter: blur(7px);
 }
 .form select {
   margin-top: 20px;
@@ -85,5 +102,12 @@
 
 .contenedor button {
   background-color: red;
+  font-weight: 700;
+}
+.form .pasoapaso {
+  width: 80%;
+  height: 100px;
+  text-align: center;
+  font-size: 15px;
   font-weight: 700;
 }
