@@ -57,45 +57,36 @@ export default function Home() {
     dispatch(getTypes());
   }, []);
 
-  function getFoods(e) {
-    e.preventDefault();
-    dispatch(getRecipesAll());
-  }
-
   function search() {
     setSearchClick(false);
     setTimeout(() => {
       setCurrentPage(1);
     }, 2000);
   }
+
   if (searchClick === false) {
     const currentFoods = recipes.slice(indexFoodsFirst, indexFoodsLast);
 
     return (
       <div className={S.hidden}>
+        <h1>Recetas Para El Mundo</h1>
         <div className={S.imagen1}> </div>
         <div>
           <div className={S.home}>
-            <SearchBar search={search} />
-            <NavBar
-              typesAll={typesAll}
-              setOrder={setOrder}
-              setCurrentPage={setCurrentPage}
-            />
-            <button
-              className={S.volverACargar}
-              onClick={e => {
-                getFoods(e);
-              }}
-            >
-              Reload
-            </button>
-            <Paginadofn
-              foodsPerPage={foodsPerPage}
-              getFood={recipes.length}
-              paginado={paginado}
-              currentPage={currentPage}
-            />
+            <div className={S.menu}>
+              <NavBar
+                typesAll={typesAll}
+                setOrder={setOrder}
+                setCurrentPage={setCurrentPage}
+              />
+              <SearchBar search={search} />
+              <Paginadofn
+                foodsPerPage={foodsPerPage}
+                getFood={recipes.length}
+                paginado={paginado}
+                currentPage={currentPage}
+              />
+            </div>
 
             <div className={S.total1}>
               {currentFoods?.map(e => {
@@ -132,14 +123,6 @@ export default function Home() {
           setOrder={setOrder}
           setCurrentPage={setCurrentPage}
         />
-        <button
-          className={S.volverACargar}
-          onClick={e => {
-            getFoods(e);
-          }}
-        >
-          Reload
-        </button>
 
         <Paginadofn
           foodsPerPage={foodsPerPage}

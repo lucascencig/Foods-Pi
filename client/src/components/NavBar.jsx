@@ -68,7 +68,7 @@ export default function NavBar({ typesAll, setCurrentPage, setOrder }) {
           defaultValue="Filter by Type"
           onChange={evt => handleFilterByDiets(evt)}
         >
-          <option>Filter by Type</option>
+          <option>Filter by Diets</option>
           {typesAll?.map(type => (
             <option key={type.name} value={type.name}>
               {type.name}

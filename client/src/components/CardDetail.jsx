@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import S from '../styles/CardDetail.module.css';
 
+import { deleteState } from '../actions/actions';
+
 export default function Detail(props) {
   const dispatch = useDispatch();
 
@@ -47,7 +49,9 @@ export default function Detail(props) {
                 Dish Type:{' '}
                 {myFood.types ? myFood.types : 'Not contains types food'}
               </h4>
-              <h4>Score: {myFood.score}</h4>
+              <h4>
+                Score: {myFood.score ? myFood.score : 'Not Contain score'}
+              </h4>
               <h4>Healthy food: {myFood.healthScore}</h4>
             </div>
           </div>

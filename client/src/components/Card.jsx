@@ -12,6 +12,7 @@ export default function Card({ name, score, image, id, diets, Dish, Steps }) {
         <p className={S.titulo}>Name: {name}</p>
         <ul>Type Diet: {diets?.join('; ')}</ul>
         <p>Dish type: {Dish}</p>
+        {/* <p>Score: {score}</p> */}
       </Link>
     </div>
   );

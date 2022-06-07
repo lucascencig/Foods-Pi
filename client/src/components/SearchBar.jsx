@@ -78,6 +78,15 @@ export default function SearchBar({ onSearch }) {
     }
   }
 
+  function volverRecetas(e) {
+    e.preventDefault();
+    try {
+      dispatch(getRecipesAll());
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
+
   return (
     <form>
       <input
@@ -89,6 +98,10 @@ export default function SearchBar({ onSearch }) {
       />
       <button className={S.botonBuscar} type="Submit" onClick={handleSubmit}>
         Buscar
+      </button>
+
+      <button className={S.botonTodasLasRecetas} onSubmit={volverRecetas}>
+        Reload
       </button>
     </form>
   );

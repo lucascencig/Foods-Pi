@@ -8,7 +8,7 @@ const { YOUR_APY_KEY, URLFOOD } = process.env;
 const infoapi = async () => {
   try {
     const url = await axios.get(
-      'https://api.spoonacular.com/recipes/complexSearch?apiKey=20a447265cfa487da1728bf0666ff76b&addRecipeInformation=true&number=100'
+      'https://api.spoonacular.com/recipes/complexSearch?apiKey=d5f3a28b6ee24ddaaafa075e5837500a&addRecipeInformation=true&number=100'
       // `${URLFOOD}/recipes/complexSearch?apiKey=${YOUR_APY_KEY}&addRecipeInformation=true&number=100`
     );
     // YOUR_APY_KEY00=8cb1910af67d42e9a53689c91fb47224
@@ -166,15 +166,15 @@ router.get('/', async (req, res, next) => {
         return res.json(infoByName);
       } else {
         let objerr = {
-          name: 'only enter numbers less than 100.000.000 or UUID code',
+          name: 'Not Found',
           image:
             'https://www.knownhost.com/blog/wp-content/uploads/2017/11/404-Error-Message.jpg',
-          id: 1234566666666666,
+          id: 0,
           score: 0,
           healthScore: 0,
           diets: [],
-          summary: 'none',
-          steps: 'none',
+          summary: 'Not Found',
+          steps: 'Not Found',
         };
         return res.json([objerr]);
       }
@@ -185,15 +185,15 @@ router.get('/', async (req, res, next) => {
       } else {
         {
           let objerr = {
-            name: 'only enter numbers less than 100.000.000 or UUID code',
+            name: 'Not Found',
             image:
               'https://www.knownhost.com/blog/wp-content/uploads/2017/11/404-Error-Message.jpg',
-            id: 1234566666666666,
+            id: 0,
             score: 0,
             healthScore: 0,
             diets: [],
-            summary: 'none',
-            steps: 'none',
+            summary: 'Not Found',
+            steps: 'Not Found',
           };
 
           res.json([objerr]);
@@ -259,14 +259,14 @@ router.get('/:id', async (req, res) => {
     }
   } catch (e) {
     let objerr = {
-      name: 'only enter numbers less than 100.000.000 or UUID code',
+      name: 'Not Found',
       image:
         'https://www.knownhost.com/blog/wp-content/uploads/2017/11/404-Error-Message.jpg',
       score: 0,
       healthScore: 0,
       diets: [],
-      summary: 'none',
-      steps: 'none',
+      summary: 'Not Found',
+      steps: 'Not Found',
     };
 
     res.json(objerr);

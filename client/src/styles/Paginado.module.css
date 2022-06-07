@@ -28,6 +28,7 @@ nav .paginado {
   box-shadow: 0 0 10px 10px rgba(36, 36, 36, 0.373);
   transform: scale(0.9);
   transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.653);
 }
 .paginado .boton:hover {
   box-shadow: 0 0 10px 10px rgba(36, 36, 36, 0.373);

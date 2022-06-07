@@ -27,7 +27,7 @@ function Cards(props) {
 
 function mapStateToProps(state) {
   return {
-    foodDetails: state.recipesAll,
+    foodetails: state.recipesAll,
   };
 }
 

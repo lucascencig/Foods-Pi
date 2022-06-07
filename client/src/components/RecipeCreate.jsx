@@ -10,13 +10,21 @@ export default function RecipeCreate() {
   const type = useSelector(state => state.types);
   const [error, setError] = useState('');
 
-  function validarInputName(evt) {
-    if (/\d/.test(evt.target.value)) {
-      setError('No es un Nombre');
+  // function validarInputName(evt) {
+  //   if (/\d/.test(evt.target.value)) {
+  //     setError('No es un Nombre');
+  //   } else {
+  //     setError('');
+  //   }
+  //   handleChange(evt);
+  // }
+  function validarInputName(e) {
+    if (/\d/.test(e.target.value)) {
+      setError('Los datos no son validos.');
     } else {
       setError('');
     }
-    handleChange(evt);
+    handleChange(e);
   }
 
   function validarInputDish(evt) {
@@ -30,7 +38,7 @@ export default function RecipeCreate() {
 
   function validarInputStep(evt) {
     if (/\d/.test(evt.target.value) && evt.target.value > 20) {
-      setError('No es un Texto1');
+      setError('No es un paso a paso');
     } else {
       setError('');
     }
@@ -83,13 +91,28 @@ export default function RecipeCreate() {
     dispatch(getTypes());
   }, [dispatch]);
 
+  async function handleChange(e) {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  function handleSelect(evt) {
+    if (!input.diets.includes(evt.target.value)) {
+      setInput({
+        ...input,
+        diets: [...input.diets, evt.target.value],
+      });
+    }
+  }
   async function handleSubmit(evt) {
     setInput({
       name: '',
       dish_summary: '',
       score: '',
       Healthy_food_level: '',
-      Step_by_Step: '',
+      step_by_Step: '',
       image: '',
       diets: [],
     });
@@ -110,22 +133,6 @@ export default function RecipeCreate() {
     alert('¡Debe llenar todos los campos para poder crear la receta!');
   }
 
-  async function handleChange(e) {
-    setInput({
-      ...input,
-      [e.target.name]: e.target.value,
-    });
-  }
-
-  function handleSelect(evt) {
-    if (!input.diets.includes(evt.target.value)) {
-      setInput({
-        ...input,
-        diets: [...input.diets, evt.target.value],
-      });
-    }
-  }
-
   function handleDelete(evt) {
     setInput({
       ...input,
@@ -142,17 +149,20 @@ export default function RecipeCreate() {
       <h2>¡Crea tu propia receta!</h2>
 
       <form className={S.form} onSubmit={handleSubmit}>
-        <label>Name:</label>
+        <label htmlFor="">Nombre de la actividad:</label>
         <input
-          type="text"
           onChange={validarInputName}
           value={input.name}
           name="name"
+          type="text"
+          placeholder="Nombre"
         />
-        <div className={S.span}>
-          {error !== '¡No es un Nombre!' ? null : (
-            <span>Debe ingresar un nombre para la receta.</span>
-          )}
+        <div className={S.error}>
+          <p>
+            {error !== 'Los datos no son validos.' ? null : (
+              <p>El nombre no puede estar vacio ni contener numeros.</p>
+            )}
+          </p>
         </div>
         <label>Summary:</label>
         <textarea
@@ -166,9 +176,13 @@ export default function RecipeCreate() {
         >
           Escribe tu resumen de la receta...
         </textarea>
-        {error !== 'No es un texto' ? null : (
-          <span className={S.span}>Debe Ingresar un resumen de la receta.</span>
-        )}
+        <div className={S.error}>
+          <p>
+            {error !== 'No es un Texto' ? null : (
+              <p>Debe ingresar un resumen minimo para la receta.</p>
+            )}
+          </p>
+        </div>
         <label>Healthy Level: {input.Healthy_food_level}</label>
         <input
           type="range"
@@ -195,20 +209,23 @@ export default function RecipeCreate() {
           <span className={S.span}>Ingresa un numero del 1 al 100</span>
         )}
         <label>Step by Step:</label>
+        <h4>Ingresa el paso a paso de tu receta...</h4>
         <input
           name="Step_by_step"
-          // value={input.Step_by_Step}
+          value={input.step_by_Step}
           type="text"
           onChange={validarInputStep}
           cols="50"
           rows="5"
         />
-        Ingresa el paso a paso de tu receta...
-        {error !== 'No es un texto1' ? null : (
-          <span className={S.span}>
-            Ingresa los pasos a seguir para la receta.
-          </span>
-        )}
+
+        <div className={S.error}>
+          <p>
+            {error !== 'No es un paso a paso' ? null : (
+              <p>El paso a paso no puede estar vacio.</p>
+            )}
+          </p>
+        </div>
         <label>Image:</label>
         <input
           type="text"
