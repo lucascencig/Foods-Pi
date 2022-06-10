@@ -13,20 +13,6 @@ const ORDER_BY_SCORE = 'ORDER_BY_SCORE';
 const FILTER_BY_DIETS = 'FILTER_BY_DIETS';
 const URLLOCALFOOD = 'http://localhost:3001';
 
-// import {
-//   GET_RECIPES,
-//   GET_TYPES,
-//   GET_DATABASE,
-//   GET_STATE_ID,
-//   GET_RECIPES_NAME,
-//   GET_RECIPES_ID,
-//   FILTER_BY_SEARCHBAR,
-//   FILTER_BY_ORDER,
-//   ORDER_BY_SCORE,
-//   FILTER_BY_DIETS,
-//   URLLOCALFOOD,
-// } from './TypesActions.js';
-
 console.log(URLLOCALFOOD);
 
 //TODAS LAS RECETAS
@@ -41,6 +27,18 @@ export function getRecipesAll() {
   };
 }
 
+export function getDatabase() {
+  return async function (dispatch) {
+    try {
+      let dataBase = await axios.get(`${URLLOCALFOOD}/recipes/dates`);
+
+      return dispatch({ type: GET_DATABASE, payload: dataBase.data });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
 //TIPOS DE DIETAS
 export function getTypes() {
   return function (dispatch) {
@@ -48,18 +46,6 @@ export function getTypes() {
       axios
         .get(`${URLLOCALFOOD}/types`)
         .then(types => dispatch({ type: GET_TYPES, payload: types.data }));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-}
-
-export function getDatabase() {
-  return async function (dispatch) {
-    try {
-      let dataBase = await axios.get(`${URLLOCALFOOD}/recipes/dates`);
-
-      return dispatch({ type: GET_DATABASE, payload: dataBase.data });
     } catch (error) {
       console.log(error);
     }
@@ -141,5 +127,11 @@ export function orderByScore(payload) {
   return {
     type: ORDER_BY_SCORE,
     payload: payload,
+  };
+}
+
+export function deleteState() {
+  return {
+    type: 'DELETE',
   };
 }

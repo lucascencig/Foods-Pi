@@ -63,14 +63,14 @@ export default function RecipeCreate() {
     handleChange(evt);
   }
 
-  function validarInputUrl(evt) {
+  function validateinputurl(evt) {
     if (
       !/^((ftp|http|https):\/\/)?www\.([A-z]+)\.([A-z]{2,})/.test(
         evt.target.value
-      ) &&
+      ) ||
       !/\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(evt.target.value)
     ) {
-      setError('Los datos ingresados NO SON URL VALIDOS');
+      setError('Los datos ingresados no son correctos url');
     } else {
       setError('');
     }
@@ -106,6 +106,7 @@ export default function RecipeCreate() {
       });
     }
   }
+
   async function handleSubmit(evt) {
     setInput({
       name: '',
@@ -128,7 +129,6 @@ export default function RecipeCreate() {
       dispatch(postRecipes(input));
 
       return alert('¡Receta creada con exito!');
-      console.log(input);
     }
     alert('¡Debe llenar todos los campos para poder crear la receta!');
   }
@@ -137,6 +137,13 @@ export default function RecipeCreate() {
     setInput({
       ...input,
       diets: input.diets.filter(diet => diet !== evt),
+    });
+  }
+
+  function handleSelectTypes(evt) {
+    setInput({
+      ...input,
+      types: [...input.types, evt.target.value],
     });
   }
 
@@ -149,7 +156,7 @@ export default function RecipeCreate() {
       <h2>¡Crea tu propia receta!</h2>
 
       <form className={S.form} onSubmit={handleSubmit}>
-        <label htmlFor="">Nombre de la actividad:</label>
+        <label htmlFor="">Nombre de la Receta:</label>
         <input
           onChange={validarInputName}
           value={input.name}
@@ -229,15 +236,14 @@ export default function RecipeCreate() {
         <label>Image:</label>
         <input
           type="text"
-          onChange={validarInputUrl}
+          onChange={validateinputurl}
           value={input.image}
           name="image"
         />
-        {error !== 'Los datos ingresados NO SON URL VALIDOS' ? null : (
-          <span className={S.span}>
-            Debe ingresar una URL valida para la imagen.
-          </span>
+        {error !== 'Los datos ingresados no son correctos url' ? null : (
+          <p className={S.span}>Debe ingresar una URL valida para la imagen.</p>
         )}
+
         <select
           className={S.select}
           defaultValue="Diet"
@@ -250,12 +256,7 @@ export default function RecipeCreate() {
             </option>
           ))}
         </select>
-        <button
-          className={S.botonCrear}
-          disabled={!input.name || !input.dish_summary}
-          type="submit"
-          value="Crear receta"
-        >
+        <button className={S.botonCrear} type="submit" value="Crear receta">
           Crear Receta
         </button>
       </form>

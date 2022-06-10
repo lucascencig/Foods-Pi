@@ -19,15 +19,6 @@ export default function Paginadofn({
     pageNumbers = pageNumbers.slice(currentPage - 1, currentPage + 2); // corte de la 0 a la 4
   }
 
-  // if (curretPage > 1 && curretPage < Math.ceil(getFood/foodsPerPage) -1  ) {
-  //     console.log(curretPage, ' page')
-  //     // console.log(pageNumbers.slice(curretPage - 2 , curretPage + 1 ))
-  //     // //9 - 12
-  //     // // 8 - 11
-  //     pageNumbers = pageNumbers.slice(curretPage - 2 , curretPage + 1 )
-
-  // }
-
   if (currentPage > 1 && currentPage < Math.ceil(getFood / foodsPerPage)) {
     pageNumbers = pageNumbers.slice(currentPage - 2, currentPage + 1);
   }

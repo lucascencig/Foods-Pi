@@ -1,16 +1,3 @@
-// import {
-//   GET_RECIPES,
-//   GET_TYPES,
-//   POST_RECIPES,
-//   GET_STATE_ID,
-//   GET_RECIPES_NAME,
-//   FILTER_BY_SEARCHBAR,
-//   FILTER_BY_DIETS,
-//   FILTER_BY_ORDER,
-//   ORDER_BY_SCORE,
-//   GET_RECIPES_ID,
-// } from '../components/actions/TypesActions.js';
-
 const POST_RECIPES = 'POST_RECIPES';
 const GET_RECIPES = 'GET_RECIPES';
 const GET_DATABASE = 'GET_DATABASE';
@@ -152,11 +139,9 @@ export const reducerroot = (state = initialState, action) => {
               if (recipe.diets.length > 0) {
                 if (recipe.diets.find(element => element === action.payload))
                   return recipe;
-              }
-              console.log(recipe);
-              // if ((action.payload === 'vegetarian') && (recipe.hasOwnProperty('vegetarian')) && (recipe.vegetarian === true)) return recipe
 
-              // if ((action.payload === 'dairyFree') && (recipe.hasOwnProperty('dairyFree')) && (recipe.dairyFree === true)) return recipe
+                console.log(recipe);
+              }
             });
 
       const filter2 =
@@ -170,9 +155,6 @@ export const reducerroot = (state = initialState, action) => {
               }
 
               console.log(recipe);
-              // if ((action.payload === 'vegetarian') && (recipe.hasOwnProperty('vegetarian')) && (recipe.vegetarian === true)) return recipe
-
-              // if ((action.payload === 'dairyFree') && (recipe.hasOwnProperty('dairyFree')) && (recipe.dairyFree === true)) return recipe
             });
       return {
         ...state,
@@ -182,6 +164,12 @@ export const reducerroot = (state = initialState, action) => {
         ...state,
         recipesAll:
           filtByDiets.length === filter2.length ? filtByDiets : filter2,
+      };
+
+    case 'DELETE':
+      return {
+        ...state,
+        detail: [],
       };
 
     default:

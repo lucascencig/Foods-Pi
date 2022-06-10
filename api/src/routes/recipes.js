@@ -3,16 +3,15 @@ const router = express.Router();
 const axios = require('axios');
 require('dotenv').config();
 const { Recipe, Diet, Op } = require('../db');
-const { YOUR_APY_KEY, URLFOOD } = process.env;
+
+const { YOUR_APY_KEY07, URLFOOD } = process.env;
 
 const infoapi = async () => {
   try {
     const url = await axios.get(
-      'https://api.spoonacular.com/recipes/complexSearch?apiKey=d5f3a28b6ee24ddaaafa075e5837500a&addRecipeInformation=true&number=100'
-      // `${URLFOOD}/recipes/complexSearch?apiKey=${YOUR_APY_KEY}&addRecipeInformation=true&number=100`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${YOUR_APY_KEY07}&addRecipeInformation=true&number=100`
     );
-    // YOUR_APY_KEY00=8cb1910af67d42e9a53689c91fb47224
-    // 'https://api.spoonacular.com/recipes/complexSearch?apiKey=a675acac718c4bfc989cb8399efe9578&addRecipeInformation=true&number=100'
+
     const info = await url.data.results.map(c => {
       return {
         name: c.title,
@@ -42,7 +41,7 @@ const infoapi = async () => {
 const apiname = async name => {
   try {
     const url = await axios.get(
-      `${URLFOOD}/recipes/complexSearch?query=${name}&addRecipeInformation=true&number=10&apiKey=${YOUR_APY_KEY}`
+      `${URLFOOD}/recipes/complexSearch?query=${name}&addRecipeInformation=true&number=10&apiKey=${YOUR_APY_KEY07}`
     );
     console.log(url.data);
     const { results } = url.data;
@@ -210,7 +209,7 @@ router.get('/:id', async (req, res) => {
   try {
     if (id.length < 8) {
       const resAxios = await axios.get(
-        `${URLFOOD}/recipes/${id}/information?apiKey=${YOUR_APY_KEY}&addRecipeInformation=true&number=100`
+        `${URLFOOD}/recipes/${id}/information?apiKey=${YOUR_APY_KEY07}&addRecipeInformation=true&number=100`
       );
       const datefilter = resAxios.data;
       let idfilter = {

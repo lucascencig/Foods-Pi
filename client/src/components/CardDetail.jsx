@@ -5,13 +5,23 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import S from '../styles/CardDetail.module.css';
 
+import { deleteState } from '../actions/actions';
+
 export default function Detail(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getDetail(props.match.params.id));
-    console.log(props.match.params.id);
+    return function () {
+      dispatch(deleteState());
+    };
   }, [dispatch]);
+
+  // useEffect(() => {
+  //   return function () {
+  //     dispatch(deleteState());
+  //   };
+  // }, [dispatch]);
 
   const myFood = useSelector(state => state.detail);
   const diet = myFood.diets;
